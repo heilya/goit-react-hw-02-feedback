@@ -1,14 +1,16 @@
 import React from 'react';
+import { Button,Wrapper } from './feedbackoptions.styled';
+
 
 
 
 export const FeedBackOptions = ({onLeaveFeedback}) => {
     return(
-        <div>
-            <button onClick={()=>onLeaveFeedback('good')}>Good</button>
-            <button onClick={()=>onLeaveFeedback('neutral')}>Neutral</button>
-            <button onClick={()=>onLeaveFeedback('bad')}>Bad</button>
-        </div>
+        <Wrapper>
+            <Button onClick={()=>onLeaveFeedback('good')}>Good</Button>
+            <Button onClick={()=>onLeaveFeedback('neutral')}>Neutral</Button>
+            <Button onClick={()=>onLeaveFeedback('bad')}>Bad</Button>
+        </Wrapper>
     )
 };
 
