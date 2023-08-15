@@ -1,5 +1,5 @@
 import { Component } from "react";
-import{Secnion,} from "./section/section";
+import{Section} from "./section/section";
 import { FeedBackOptions } from "./feedbackoptions/feedbackoptions";
 import { Statistics } from "./statistics/statistics";
 
@@ -17,24 +17,11 @@ export class App extends Component {
     this.setState(prevState => {
       return {
       [type]: prevState[type] + 1,
-      // total: this.countTotalFeedback(),
-      // positive: this.countPositiveFeedbackPercentage(),
       }
     })
   };
 
-  // countTotalFeedback=()=>{
-  //   this.setState(prevState => {
-  //     return {
-  //       total: prevState.good + prevState.neutral + prevState.bad
-  //     }
-  //   })
-  // };
  
-
-  // countPositiveFeedbackPercentage = () => {
-  //   this.setState(prevState => ({ positive: (prevState.good / prevState.total) * 100 }));
-  // };
  
   countTotalFeedback = ()=>{
     const { good, neutral, bad } = this.state;
@@ -52,12 +39,12 @@ export class App extends Component {
 
     return (
       <div>
-    <Secnion title="Please leave feedback">
+    <Section title="Please leave feedback">
       <FeedBackOptions onLeaveFeedback={this.onLeaveFeedback}/>
-    </Secnion>
-    <Secnion title="Statistics">
+    </Section>
+    <Section title="Statistics">
     <Statistics good={this.state.good} neutral={this.state.neutral} bad={this.state.bad} total={totalFeedback} positivePercentage={positiveFeedbackPercentage}/>
-    </Secnion>
+    </Section>
       </div>
     )
   }
